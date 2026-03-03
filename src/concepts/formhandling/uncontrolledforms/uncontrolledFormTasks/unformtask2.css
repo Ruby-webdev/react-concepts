@@ -1,0 +1,194 @@
+.outer {
+    min-height: 100vh;
+    width: 100%;
+    background: linear-gradient(to right, rgb(79, 79, 182), rgb(99, 53, 99));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box1 {
+    min-height: 60vh;
+    width: 60%;
+    /* border: 2px solid black; */
+    border-radius: 20px;
+    display: flex;
+    overflow: hidden;
+
+}
+
+.left {
+    width: 50%;
+    /* border: 2px solid white; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+    background: linear-gradient(25deg, rgb(49, 180, 232), rgb(94, 94, 220), rgb(171, 75, 171));
+    color: white;
+    padding: 30px;
+    /* padding: 40px 80px 40px 40px; */
+    /* clip-path: shape(from 0 0,vline to 100%,curve to 6.25% calc(100% - 15.5px) with 4.17% calc(100% - 15px),curve to 10.42% calc(100% - 9px) with 8.33% calc(100% - 16px),curve to 14.58% calc(100% - 20px) with 12.5% calc(100% - 2px),curve to 18.75% calc(100% - 44px) with 16.67% calc(100% - 38px),curve to 22.92% calc(100% - 27.5px) with 20.83% calc(100% - 50px),curve to 27.08% calc(100% - 20.5px) with 25% calc(100% - 5px),curve to 31.25% calc(100% - 23.5px) with 29.17% calc(100% - 36px),curve to 35.42% calc(100% - 10.5px) with 33.33% calc(100% - 11px),curve to 39.58% calc(100% - 5.5px) with 37.5% calc(100% - 10px),curve to 43.75% calc(100% - 9.5px) with 41.67% calc(100% - 1px),curve to 47.92% calc(100% - 11.5px) with 45.83% calc(100% - 18px),curve to 52.08% calc(100% - 20px) with 50% calc(100% - 5px),curve to 56.25% calc(100% - 23px) with 54.17% calc(100% - 35px),curve to 60.42% calc(100% - 28px) with 58.33% calc(100% - 11px),curve to 64.58% calc(100% - 24.5px) with 62.5% calc(100% - 45px),curve to 68.75% calc(100% - 25.5px) with 66.67% calc(100% - 4px),curve to 72.92% calc(100% - 44.5px) with 70.83% calc(100% - 47px),curve to 77.08% calc(100% - 31px) with 75% calc(100% - 42px),curve to 81.25% calc(100% - 26.5px) with 79.17% calc(100% - 20px),curve to 85.42% calc(100% - 23.5px) with 83.33% calc(100% - 33px),curve to 89.58% calc(100% - 13.5px) with 87.5% calc(100% - 14px),curve to 93.75% calc(100% - 26.5px) with 91.67% calc(100% - 13px),curve to 100% 100% with 95.83% calc(100% - 40px),vline to 0, hline to 0); */
+
+}
+
+.left p {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.left button {
+    padding: 12px;
+    border-radius: 20px;
+    width: 100%;
+    cursor: pointer;
+    color: white;
+    background: linear-gradient(180deg, skyblue, rgb(87, 87, 218), rgb(105, 3, 105));
+    font-weight: 500;
+    font-size: medium;
+    border: none;
+    /* border: 1px solid white; */
+    box-shadow: 0px 0px 5px 0px whitesmoke;
+}
+
+.right {
+    width: 50%;
+    /* border: 2px solid rgb(43, 40, 40); */
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 10px;
+    /* text-align: center; */
+    padding: 10px;
+    background-color: white;
+    color: rgb(101, 10, 165);
+    padding: 20px 0px 40px 40px;
+}
+
+form {
+    /* border: 2px solid black; */
+    width: 80%;
+    height: auto;
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    gap: 5px;
+    padding-left: 20px;
+}
+
+form input {
+    /* text-decoration: underline; */
+    border: none;
+    outline: none;
+    width: 100%;
+    padding: 3px;
+    background: none;
+    /* border-bottom: 2px solid grey; */
+    /* border: 2px solid black;  */
+
+}
+
+.error {
+    border: 2px solid red;
+}
+
+.para {
+    height: 50px;
+    width: 100%;
+    /* border: 2px solid black; */
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    padding: 3px;
+}
+
+.para button {
+    padding: 15px 42px;
+    border-radius: 20px;
+    cursor: pointer;
+    color: white;
+    background: linear-gradient(180deg, skyblue, rgb(87, 87, 218), rgb(105, 3, 105));
+    border: none;
+    /* border: 1px solid white; */
+    box-shadow: 0px 0px 5px 0px whitesmoke;
+
+}
+.input-section1{
+    display: flex;
+    gap: 2px;
+}
+
+.terms {
+    display: flex;
+    /* border: 2px solid blue; */
+    align-items: center;
+    gap: 2px;
+}
+
+.terms input {
+    height: 100%;
+    width: auto;
+}
+
+.terms label {
+    cursor: pointer;
+}
+
+
+.p {
+    height: auto;
+    width: 100%;
+    /* border: 2px solid black; */
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+
+.p div {
+    /* border: 1px solid whitesmoke; */
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    box-shadow: 0px 0px 5px 0px rgb(104, 100, 100);
+    background: linear-gradient(to right, rgb(87, 87, 218), purple);
+
+}
+
+a {
+    color: blue;
+}
+
+@media(max-width:700px) {
+    .box1 {
+        min-height: auto;
+        width: 95%;
+        flex-direction: column;
+        margin: 20px;
+        /* clip-path: shape(from 0 0, vline to 100%, curve to 4.69% calc(100% - 15.5px) with 3.13% calc(100% - 15px), curve to 7.81% calc(100% - 9px) with 6.25% calc(100% - 16px), curve to 10.94% calc(100% - 20px) with 9.38% calc(100% - 2px), curve to 14.06% calc(100% - 44px) with 12.5% calc(100% - 38px), curve to 17.19% calc(100% - 27.5px) with 15.63% calc(100% - 50px), curve to 20.31% calc(100% - 20.5px) with 18.75% calc(100% - 5px), curve to 23.44% calc(100% - 23.5px) with 21.88% calc(100% - 36px), curve to 26.56% calc(100% - 10.5px) with 25% calc(100% - 11px), curve to 29.69% calc(100% - 5.5px) with 28.13% calc(100% - 10px), curve to 32.81% calc(100% - 9.5px) with 31.25% calc(100% - 1px), curve to 35.94% calc(100% - 11.5px) with 34.38% calc(100% - 18px), curve to 39.06% calc(100% - 20px) with 37.5% calc(100% - 5px), curve to 42.19% calc(100% - 23px) with 40.63% calc(100% - 35px), curve to 45.31% calc(100% - 28px) with 43.75% calc(100% - 11px), curve to 48.44% calc(100% - 24.5px) with 46.88% calc(100% - 45px), curve to 51.56% calc(100% - 25.5px) with 50% calc(100% - 4px), curve to 54.69% calc(100% - 44.5px) with 53.13% calc(100% - 47px), curve to 57.81% calc(100% - 31px) with 56.25% calc(100% - 42px), curve to 60.94% calc(100% - 26.5px) with 59.38% calc(100% - 20px), curve to 64.06% calc(100% - 23.5px) with 62.5% calc(100% - 33px), curve to 67.19% calc(100% - 13.5px) with 65.63% calc(100% - 14px), curve to 70.31% calc(100% - 26.5px) with 68.75% calc(100% - 13px), curve to 73.44% calc(100% - 41px) with 71.88% calc(100% - 40px), curve to 76.56% calc(100% - 28.5px) with 75% calc(100% - 42px), curve to 79.69% calc(100% - 7.5px) with 78.13% calc(100% - 15px), curve to 82.81% calc(100% - 12.5px) with 81.25% calc(100% - 0px), curve to 85.94% calc(100% - 27.5px) with 84.38% calc(100% - 25px), curve to 89.06% calc(100% - 28px) with 87.5% calc(100% - 30px), curve to 92.19% calc(100% - 27px) with 90.63% calc(100% - 26px), curve to 95.31% calc(100% - 34px) with 93.75% calc(100% - 28px), curve to 100% 100% with 96.88% calc(100% - 40px), vline to 0, hline to 0); */
+    }
+
+}
+
+.left,
+.right {
+    width: 100%;
+}
+
+.right {
+    padding: 20px;
+    align-items: center;
+}
+
+form {
+    width: 100%;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.para {
+    /* flex-direction: column; */
+    gap: 10px;
+    height: auto;
+}

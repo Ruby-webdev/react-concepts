@@ -1,0 +1,39 @@
+.box1{
+    height: 100vh;
+    width: 100%;
+    background-color:  chocolate;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+}
+form{
+    height: 300px;
+    width: 60%;
+    /* border: 2px solid black; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    padding: 10px;
+    background-color:wheat;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px -1px yellow;
+}
+label{
+    padding: 10px;
+    /* border: 1px solid black; */
+    display: flex;
+    gap: 2px;
+    cursor: pointer;
+}
+input{
+    padding: 10px;
+    border: none;
+}
+button{
+    padding: 12px 32px;
+    border: none;
+    cursor: pointer;
+}
