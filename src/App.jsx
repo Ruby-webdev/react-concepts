@@ -16,6 +16,7 @@ import ContextApiConcept from "./concepts/contextapi/ContextApiConcept";
 import HOC from "./concepts/hoc/HOC";
 import ReactOptimization from "./concepts/optimization/ReactOptimization";
 import HooksHome from "./concepts/hooks/HooksHome";
+import CrudOperationHome from "./concepts/crudoperation/CrudOperationHome";
 
 
 
@@ -30,7 +31,7 @@ const App = () => {
             {/* <HooksHome/> */}
             {/* <ReactFragments/> */}
             {/* <ListAndKeys/> */}
-            <HooksHome />
+            {/* <HooksHome /> */}
             {/* <FormHandling /> */}
             {/* <AxiosConcept/> */}
             {/* <Tailwindcssconcept/> */}
@@ -39,6 +40,7 @@ const App = () => {
             {/* <ContextApiConcept/> */}
             {/* <HOC/> */}
             {/* <ReactOptimization/> */}
+            <CrudOperationHome/>
 
 
             <ToastContainer position="top-center"

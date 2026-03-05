@@ -1,0 +1,25 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "username": "sundari",
+      "age": "23",
+      "email": "sundari@gmail.com",
+      "password": "143",
+      "dob": "21/08/1985",
+      "city": "Bombay",
+      "gender": "female"
+    },
+    {
+      "id": "6eb3",
+      "username": "leela",
+      "age": "66",
+      "email": "rubysahoo372@gmail.com",
+      "password": "434",
+      "dob": "3765-03-31",
+      "city": "",
+      "gender": "Female"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
