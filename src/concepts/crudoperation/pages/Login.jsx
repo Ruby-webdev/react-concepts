@@ -1,31 +1,76 @@
+import axios from 'axios'
 import React, { useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+import { toast, Zoom } from 'react-toastify'
 
 const Login = () => {
 
-    const[formData, setFormdata] = useState({
-        email:"",
-        password:""
-    })
+  const [formData, setFormdata] = useState({
+    email: "",
+    password: ""
+  })
 
-    const handleInput=(e)=>{
-        const{name,value}= e.target
-        setFormdata({...formData, [name]:value})
+  const handleInput = (e) => {
+    const { name, value } = e.target
+    setFormdata({ ...formData, [name]: value })
+  }
+
+  // const registrationData = JSON.parse(localStorage.getItem("userData"))
+
+  const navigate = useNavigate()
+
+  const handleForm = async (e) => {
+    e.preventDefault()
+    // console.log(formData);
+
+    if (!formData.email || !formData.password) {
+      toast.error("Please fill the fields", { position: "top-center", autoClose: 1000, hideProgressBar: true, transition: Zoom })
+      return
     }
 
-    const handleForm=(e)=>{
-        e.preventDefault()
-        console.log(formData);
 
-         setFormdata({
-            email:"",
-            password:""
-         })
-        
+    try {
+      const { data } = await axios.get("http://localhost:3000/users")
+
+      const user = data.find((u) => u.email === formData.email)
+
+      if (!user) {
+        toast.error("User not found")
+        return
+      }
+      if (user.password !== formData.password) {
+        toast.error("Invalid password")
+        return
+      }
+
+      toast.success("Logged in successfully", { position: "top-center", autoClose: 1000, hideProgressBar: true, transition: Zoom })
+
+
+      //generate token , store the token in localstorage
+      localStorage.setItem("jwt_token", JSON.stringify("code"))
+      // const token = "gyietw8gbgj.wghfyuwgfhkj."+user.id
+      // localStorage.setItem("jwt_token", JSON.stringify(token))
+
+      setFormdata({
+        email: "",
+        password: ""
+      });
+
+      navigate("/dashboard")
+
     }
-  return  (
+    catch (error) {
+      toast.error("Server error")
+      console.log(error);
+
+    }
+
+
+  }
+  return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
 
-      <div className="w-full max-w-md bg-white p-8 rounded-xl shadow-lg">
+      <div className="w-full max-w-md  bg-white p-8 rounded-xl shadow-lg ">
 
         <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">
           Login
@@ -72,9 +117,7 @@ const Login = () => {
         {/* Register Link */}
         <p className="text-center text-gray-600 mt-4">
           Don't have an account?{" "}
-          <a href="/register" className="text-blue-500 font-medium hover:underline">
-            Register
-          </a>
+          <Link to="/register" className="text-blue-500 font-medium hover:underline"> Register</Link> 
         </p>
 
       </div>

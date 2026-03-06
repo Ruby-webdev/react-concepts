@@ -6,36 +6,49 @@ import Contact from "../pages/Contact";
 import Help from "../pages/Help";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
+import Dashboard from "../pages/Dashboard";
+import PrivateRouting from "./PrivateRouting";
 
 export const routes = createBrowserRouter([
   {
-    path: "/",  
+    path: "/",
     element: <Layout />,
     children: [
-        {
-            path:"/",
-            element:<Home/>
-        },
-         {
-            path:"/about",
-            element:<About/>
-        },
-         {
-            path:"/contact",
-            element:<Contact/>
-        },
-         {
-            path:"/help",
-            element:<Help/>
-        },
+      {
+        path: "/",
+        element: <Home />
+      },
+      {
+        path: "/about",
+        element: <About />
+      },
+      {
+        path: "/contact",
+        element: <Contact />
+      },
+      {
+        path: "/help",
+        element: <Help />
+      },
     ]
+
   },
+
   {
-    path:"/login",
-    element:<Login/>
+    path: "/login",
+    element: <Login />
   },
+
   {
-    path:"/register",
-    element:<Register/>
+    path: "/register",
+    element: <Register />
+  },
+
+  {
+    path: "/dashboard",
+    element: <PrivateRouting>
+      <Dashboard />
+    </PrivateRouting>
   }
+  
 ]);

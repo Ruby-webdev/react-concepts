@@ -19,6 +19,16 @@
       "dob": "3765-03-31",
       "city": "",
       "gender": "Female"
+    },
+    {
+      "id": "ff4e",
+      "username": "Rahul",
+      "age": "25",
+      "email": "rahul@gmail.com",
+      "password": "455",
+      "dob": "2026-03-17",
+      "city": "Hyderabad",
+      "gender": "Male"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
