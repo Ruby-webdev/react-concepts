@@ -13,22 +13,58 @@
     {
       "id": "6eb3",
       "username": "leela",
-      "age": "66",
+      "age": "30",
       "email": "rubysahoo372@gmail.com",
       "password": "434",
       "dob": "3765-03-31",
       "city": "",
       "gender": "Female"
+    }
+  ],
+  "notes": [
+    {
+      "id": "bec1",
+      "title": "gfdgcfcgcg",
+      "description": "gvhgvhgvhgv",
+      "tags": "#study"
     },
     {
-      "id": "ff4e",
-      "username": "Rahul",
-      "age": "25",
-      "email": "rahul@gmail.com",
-      "password": "455",
-      "dob": "2026-03-17",
-      "city": "Hyderabad",
-      "gender": "Male"
+      "id": "18fe",
+      "title": "java",
+      "description": "hello java",
+      "tags": "#code"
+    },
+    {
+      "id": "db97",
+      "title": "hkjl",
+      "description": "h;ewh",
+      "tags": "#code"
+    },
+    {
+      "id": "3ae2",
+      "title": "eys",
+      "description": "gzet",
+      "tags": "re"
+    },
+    {
+      "id": "f97e",
+      "title": "hgWI;HQEF",
+      "description": "BFGUWO",
+      "tags": "cghf,",
+      "userId": "1"
+    },
+    {
+      "id": "fb6e",
+      "title": "tom",
+      "description": "guwqt",
+      "tags": "lll"
+    },
+    {
+      "id": "9031",
+      "title": "Today is Friday",
+      "description": "Hello everyone ",
+      "tags": "#ewr",
+      "userId": "6eb3"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

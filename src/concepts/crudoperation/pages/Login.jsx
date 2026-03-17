@@ -1,7 +1,8 @@
 import axios from 'axios'
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { toast, Zoom } from 'react-toastify'
+import { GlobalContextApi } from '../context/ContextApi'
 
 const Login = () => {
 
@@ -9,6 +10,9 @@ const Login = () => {
     email: "",
     password: ""
   })
+  const navigate = useNavigate()
+
+  const { setCurrentUser } = useContext(GlobalContextApi)
 
   const handleInput = (e) => {
     const { name, value } = e.target
@@ -17,7 +21,6 @@ const Login = () => {
 
   // const registrationData = JSON.parse(localStorage.getItem("userData"))
 
-  const navigate = useNavigate()
 
   const handleForm = async (e) => {
     e.preventDefault()
@@ -28,14 +31,12 @@ const Login = () => {
       return
     }
 
-
     try {
-      const { data } = await axios.get("http://localhost:3000/users")
-
+      const { data } = await axios.get("http://localhost:3003/users")
       const user = data.find((u) => u.email === formData.email)
 
       if (!user) {
-        toast.error("User not found")
+        toast.error("Email is not registered")
         return
       }
       if (user.password !== formData.password) {
@@ -43,13 +44,13 @@ const Login = () => {
         return
       }
 
+      setCurrentUser(user)
       toast.success("Logged in successfully", { position: "top-center", autoClose: 1000, hideProgressBar: true, transition: Zoom })
 
-
       //generate token , store the token in localstorage
-      localStorage.setItem("jwt_token", JSON.stringify("code"))
-      // const token = "gyietw8gbgj.wghfyuwgfhkj."+user.id
-      // localStorage.setItem("jwt_token", JSON.stringify(token))
+
+      const token = "gfiu.gewyk." + user.id
+      localStorage.setItem("jwt_token", JSON.stringify(token))
 
       setFormdata({
         email: "",
@@ -62,11 +63,10 @@ const Login = () => {
     catch (error) {
       toast.error("Server error")
       console.log(error);
-
     }
 
-
   }
+
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
 
@@ -117,7 +117,7 @@ const Login = () => {
         {/* Register Link */}
         <p className="text-center text-gray-600 mt-4">
           Don't have an account?{" "}
-          <Link to="/register" className="text-blue-500 font-medium hover:underline"> Register</Link> 
+          <Link to="/register" className="text-blue-500 font-medium hover:underline"> Register</Link>
         </p>
 
       </div>

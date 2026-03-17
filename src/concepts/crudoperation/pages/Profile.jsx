@@ -1,8 +1,14 @@
-import React from 'react'
+import axios from 'axios'
+import axios from 'axios'
+import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
 
 const Profile = () => {
+  
   return (
-    <div>Profile</div>
+    <div className='h-full w-full bg-blue-500 border'>
+      
+    </div>
   )
 }
 

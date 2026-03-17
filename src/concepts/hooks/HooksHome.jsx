@@ -16,6 +16,8 @@ import UseEffectHookHome from "./useeffecthook/UseEffectHookHome"
 // import UseEffectTask1 from "./useeffecthook/tasks/UseEffectTask1"
 import UseMemoHook from "./usememohook/UseMemoHook"
 import UseCallBackHook from "./usecallbackhook/UseCallBackHook"
+import UseReducerHook from "./usereducerhook/UseReducerHook"
+import UseReducerFormHandle from "./usereducerhook/UseReducerFormHandle"
 
 
 const HooksHome=()=>{
@@ -38,7 +40,9 @@ const HooksHome=()=>{
            {/* <UseEffectTask1/> */}
 
            {/* <UseMemoHook/> */}
-           <UseCallBackHook/>
+           {/* <UseCallBackHook/> */}
+           {/* <UseReducerHook/> */}
+           <UseReducerFormHandle/>
         </div>
     )
 }

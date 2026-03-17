@@ -1,13 +1,15 @@
-import axios from 'axios';
-import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom';
-import { toast } from 'react-toastify';
+import axios from 'axios'
+import React, { useEffect, useState } from 'react'
+import { useNavigate, useParams } from 'react-router-dom'
+import { toast } from 'react-toastify'
+import { axiosInstance } from '../../../../axiosconcept/axiosinstence'
 
-const Register = () => {
+const UpdateProfile = () => {
 
-  const navigate = useNavigate()
+  const{userId}= useParams()
+  const navigate= useNavigate()
 
-  const [formData, setFormData] = useState({
+  const[formData,setFormData] = useState({
     username: "",
     age: "",
     email: "",
@@ -15,67 +17,57 @@ const Register = () => {
     dob: "",
     city: "",
     gender: ""
-  });
+  })
 
+  const fdata= async ()=>{
+    const{data}= await axiosInstance.get(`/users/${userId}`)
+    setFormData(data)
+  }
 
-  const { username, age, email, password, dob, city, gender } = formData
+  useEffect(()=>{
+    fdata()
+  },[])
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
+  const handleChange= (e)=>{
+    const{name,value} = e.target
+    setFormData({...formData, [name]:value})
 
-    setFormData({
-      ...formData,
-      [name]: value
-    });
-  };
+  }
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e)=>{
     e.preventDefault()
     // console.log(formData);
-
-    //! send the data to backend for register purpose
-    // if register done successfully then navigate to login page
     try {
-
-      if (!username || !age || !email || !dob || !password || !city || !gender) {
-        toast.error("All fields are required")
-        return
-      }
-      const { data } = await axios.post("http://localhost:3003/users", formData)
-      // console.log(data)
-      toast.success("Registration successfull")
+      
+      const{data} = await axiosInstance.put(`/users/${userId}`, formData)
+      // console.log(data);
+      toast.success("Data updated successfully")
 
       setFormData({
-        username: "",
-        age: "",
-        email: "",
-        password: "",
-        dob: "",
-        city: "",
-        gender: ""
-      });
+         username: "",
+              age: "",
+              email: "",
+              password: "",
+              dob: "",
+              city: "",
+              gender: ""
+      })
 
-      setTimeout(() => {
-        navigate("/login")
-      }, 1000)
-
-
+      navigate (`/dashboard/profile/${userId}`)
     } catch (error) {
-      console.log(error)
+      console.log(error);
+      
     }
 
-    // localStorage.setItem("userData", JSON.stringify(formData))
-    // navigate("/login")
-
-  };
-
+    
+  }
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-100 to-cyan-100">
 
       <div className="bg-white p-8 rounded-xl shadow-lg w-full max-w-md">
 
         <h2 className="text-2xl font-bold text-center mb-6">
-          Register
+          Update Profile
         </h2>
 
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -182,7 +174,7 @@ const Register = () => {
             bg-gradient-to-r from-indigo-500 to-blue-500 
             hover:from-indigo-600 hover:to-blue-600 transition"
           >
-            Register
+            Update
           </button>
 
         </form>
@@ -190,7 +182,7 @@ const Register = () => {
       </div>
 
     </div>
-  );
-};
+  )
+}
 
-export default Register;
+export default UpdateProfile
